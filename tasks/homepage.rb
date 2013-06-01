@@ -20,22 +20,25 @@ class Homepage
 	private
 
 	def update_repo
+		puts 'update homepage ...'
 		git = Git.open @dir
 		git.checkout '.'
 		git.pull
-		puts 'updated repo'
+		puts '... done!'
 	end
 
 	def clone_repo
+		puts 'fetching homepage ...'
 		Git.clone @git_url, @dir
-		puts 'cloned repo'
+		puts '... done!'
 	end
 
 	def setup
+		puts 'setting up homepage ...'
 		Dir.chdir @dir
 		system 'bundle'
 		system 'rake'
-		puts 'repo is ready'
+		puts '... homepage is ready!'
 	end
 
 	def dir_exists?
