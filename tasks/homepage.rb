@@ -31,8 +31,8 @@ class Homepage
 
 	def setup
 		Dir.chdir @dir
-		sh 'bundle'
-		sh 'rake'
+		system 'bundle'
+		system 'rake'
 	end
 
 	def dir_exists?
