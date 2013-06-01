@@ -23,16 +23,19 @@ class Homepage
 		git = Git.open @dir
 		git.checkout '.'
 		git.pull
+		puts 'updated repo'
 	end
 
 	def clone_repo
 		Git.clone @git_url, @dir
+		puts 'cloned repo'
 	end
 
 	def setup
 		Dir.chdir @dir
 		system 'bundle'
 		system 'rake'
+		puts 'repo is ready'
 	end
 
 	def dir_exists?
