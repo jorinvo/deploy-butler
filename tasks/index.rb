@@ -1,4 +1,4 @@
-require 'homepage'
+require_relative 'homepage'
 
 class Tasks
 	def homepage

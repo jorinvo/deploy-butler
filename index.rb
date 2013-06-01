@@ -1,10 +1,7 @@
 require 'sinatra'
-# require 'tasks'
+require_relative 'tasks/index'
 
-get '/hi' do
-  "Hello World!"
+
+post '/homepage' do
+	Tasks.homepage
 end
-
-# post '/homepage' do
-# 	Tasks.homepage
-# end
