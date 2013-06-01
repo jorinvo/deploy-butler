@@ -28,13 +28,13 @@ class Homepage
 	end
 
 	def clone_repo
-		puts 'fetching homepage ...'
+		puts 'fetch homepage ...'
 		Git.clone @git_url, @dir
 		puts '... done!'
 	end
 
 	def setup
-		puts 'setting up homepage ...'
+		puts 'setup homepage ...'
 		Dir.chdir @dir
 		system 'bundle'
 		system 'rake'
