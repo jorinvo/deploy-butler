@@ -1,5 +1,5 @@
 require 'sinatra'
-require_relative 'tasks/index'
+require_relative 'tasks'
 
 set :port, 61001
 
