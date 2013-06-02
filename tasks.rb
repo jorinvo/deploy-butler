@@ -1,5 +1,5 @@
 require_relative 'scripts/repo'
-#some comment :(
+#some comment
 class Tasks
 	def self.homepage
 
