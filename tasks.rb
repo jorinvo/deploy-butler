@@ -18,7 +18,7 @@ class Tasks
 
 	def self.butler
 
-		dir = '~/butler'
+		dir = '/home/jorin/butler'
 		git_url = 'git@gitlab.com:jorin/butler.git'
 
 		Repo.new(dir, git_url).update
@@ -26,7 +26,7 @@ class Tasks
 		puts 'setup butler ...'
 		Dir.chdir dir
 		system 'bundle'
-		system 'svc -du ~/service/butler'
+		system 'svc -du /home/jorin/service/butler'
 		puts '... butler is ready!'
 
 	end
