@@ -19,7 +19,7 @@ class Tasks
 	def self.butler
 
 		dir = '/home/jorin/butler'
-		git_url = 'git@gitlab.com:jorin/butler.git'
+		git_url = 'git@github.com:jorin-vogel/deploy-butler.git'
 
 		Repo.new(dir, git_url).update
 
