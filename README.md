@@ -1,8 +1,14 @@
-# setup
+# BUTLER
 
-`bundle`
+my little butler for auto-deploying jorin.in
+oh, and butler also updates itself :wink:.
 
 
-# usage
+## setup
+
+`bundle install`
+
+
+## usage
 
 `ruby index.rb`
