@@ -1,12 +1,18 @@
 require 'sinatra'
 require_relative 'tasks'
 
-set :port, 61001
 
 post '/homepage' do
-	Tasks.homepage
+  Tasks.homepage
 end
 
 post '/butler' do
-	Tasks.butler
+  request.body.rewind
+  verify_signature(request.body.read)
+  Tasks.butler
+end
+
+def verify_signature(payload_body)
+  signature = 'sha1=' + OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha1'), ENV['SECRET_TOKEN'], payload_body)
+  return halt 500, "Signatures didn't match!" unless Rack::Utils.secure_compare(signature, request.env['HTTP_X_HUB_SIGNATURE'])
 end
