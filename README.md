@@ -1,6 +1,6 @@
 # BUTLER
 
-my little butler for auto-deploying jorin.in
+my little butler for auto-deploying jorin.in.
 oh, and butler also updates itself :wink:.
 
 

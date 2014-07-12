@@ -6,11 +6,14 @@ post '/homepage' do
   Tasks.homepage
 end
 
+
 post '/butler' do
   request.body.rewind
   verify_signature(request.body.read)
   Tasks.butler
 end
+
+
 
 def verify_signature(payload_body)
   signature = 'sha1=' + OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha1'), ENV['SECRET_TOKEN'], payload_body)
