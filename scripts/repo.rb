@@ -19,7 +19,8 @@ class Repo
 	def update_repo
 		puts 'update existing repo ...'
 		Dir.chdir @dir
-		system "git pull origin master"
+		system 'git reset --hard HEAD'
+		system 'git pull origin master'
 		puts '... done!'
 	end
 
