@@ -14,6 +14,13 @@ post '/butler' do
 end
 
 
+post '/study' do
+  request.body.rewind
+  verify_signature(request.body.read)
+  Tasks.study
+end
+
+
 
 def verify_signature(payload_body)
   signature = 'sha1=' + OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha1'), ENV['SECRET_TOKEN'], payload_body)

@@ -1,6 +1,7 @@
 require_relative 'scripts/repo'
 
 class Tasks
+
 	def self.homepage
 
 		dir = '/var/www/virtual/jorin/html/homepage'
@@ -30,4 +31,22 @@ class Tasks
 		puts '... butler is ready!'
 
 	end
+
+	def self.study
+
+		dir = '/home/jorin/study'
+		git_url = 'git@github.com:jorin-vogel/study-thai.git'
+
+		Repo.new(dir, git_url).update
+
+		puts 'setup study ...'
+		Dir.chdir dir
+		system 'bundle'
+		system 'npm install'
+		system './node_modules/gulp/bin/gulp.js build'
+		system 'svc -du /home/jorin/service/study'
+		puts '... study is ready!'
+
+	end
+
 end
